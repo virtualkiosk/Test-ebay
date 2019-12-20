@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191220 13:47:49.425" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="C:\Users\CHLRA2\PycharmProjects\Test-ebay\ebay-Login-addcart\TestSuite\ebayTest.robot" id="s1" name="ebayTest">
+<test id="s1-t1" name="Sample ebay test case for adding and removing items in cart">
+<kw type="setup" name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:</arg>
+<arg>browser=${ENVIRONMENT_BROWSER_EXECUTION}</arg>
+</arguments>
+<msg timestamp="20191220 13:47:50.151" level="INFO">Opening browser 'chrome' to base url 'about:'.</msg>
+<status status="PASS" endtime="20191220 13:47:54.107" starttime="20191220 13:47:50.151"></status>
+</kw>
+<kw name="Given I am on ebay home page" library="HomePage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${ENVIRONMENT_EBAY_URL}</arg>
+</arguments>
+<msg timestamp="20191220 13:47:54.110" level="INFO">Opening url 'https://www.ebay.com.au/'</msg>
+<status status="PASS" endtime="20191220 13:47:56.399" starttime="20191220 13:47:54.110"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${HomePage_ebay_icon}</arg>
+</arguments>
+<status status="PASS" endtime="20191220 13:47:56.650" starttime="20191220 13:47:56.399"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${HomePage_myebay}</arg>
+</arguments>
+<status status="PASS" endtime="20191220 13:47:56.691" starttime="20191220 13:47:56.651"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:47:56.691" starttime="20191220 13:47:54.109"></status>
+</kw>
+<kw name="When I add a book in cart" library="ProcessDefinition">
+<kw name="I search for books in search bar" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${HomePage_search_bar}</arg>
+</arguments>
+<status status="PASS" endtime="20191220 13:47:56.735" starttime="20191220 13:47:56.693"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>5 times</arg>
+<arg>2s</arg>
+<arg>input text</arg>
+<arg>${HomePage_search_bar}</arg>
+<arg>Books</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${HomePage_search_bar}</arg>
+<arg>Books</arg>
+</arguments>
+<msg timestamp="20191220 13:47:56.736" level="INFO">Typing text 'Books' into text field 'xpath=//*[@id="gh-ac"]'.</msg>
+<status status="PASS" endtime="20191220 13:47:56.903" starttime="20191220 13:47:56.736"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:47:56.903" starttime="20191220 13:47:56.735"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>5 times</arg>
+<arg>2s</arg>
+<arg>click element</arg>
+<arg>${search_button}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_button}</arg>
+</arguments>
+<msg timestamp="20191220 13:47:56.904" level="INFO">Clicking element 'xpath=//*[@id="gh-btn"]'.</msg>
+<status status="PASS" endtime="20191220 13:48:00.722" starttime="20191220 13:47:56.903"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:48:00.722" starttime="20191220 13:47:56.903"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:48:00.722" starttime="20191220 13:47:56.693"></status>
+</kw>
+<kw name="click on the first item on the search result" library="SearchResults">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${HomePage_search_complete}</arg>
+</arguments>
+<status status="PASS" endtime="20191220 13:48:01.187" starttime="20191220 13:48:00.723"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>5 times</arg>
+<arg>2s</arg>
+<arg>click element</arg>
+<arg>${SearchResults_firstItem}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${SearchResults_firstItem}</arg>
+</arguments>
+<msg timestamp="20191220 13:48:01.189" level="INFO">Clicking element 'xpath=//*[@id="srp-river-results-listing1"]//h3'.</msg>
+<status status="PASS" endtime="20191220 13:48:33.689" starttime="20191220 13:48:01.188"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:48:33.689" starttime="20191220 13:48:01.188"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:48:33.689" starttime="20191220 13:48:00.722"></status>
+</kw>
+<kw name="Add the book to the cart" library="ProductDetail">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Cart_add_to_watchlist}</arg>
+</arguments>
+<status status="PASS" endtime="20191220 13:48:33.863" starttime="20191220 13:48:33.690"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>5 times</arg>
+<arg>2s</arg>
+<arg>click element</arg>
+<arg>${Cart_add_to_cart}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Cart_add_to_cart}</arg>
+</arguments>
+<msg timestamp="20191220 13:48:33.864" level="INFO">Clicking element 'xpath=//*[@id="vi-atl-lnk"]'.</msg>
+<status status="PASS" endtime="20191220 13:48:35.131" starttime="20191220 13:48:33.864"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:48:35.131" starttime="20191220 13:48:33.863"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:48:35.131" starttime="20191220 13:48:33.690"></status>
+</kw>
+<status status="PASS" endtime="20191220 13:48:35.131" starttime="20191220 13:47:56.692"></status>
+</kw>
+<kw name="Then I verify book is added in cart successfully" library="ProcessDefinition">
+<kw name="And Go to the Cart" library="ProductDetail">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Cart_dialogue_item_added_to_cart}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191220 13:48:40.972" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191220 13:48:40.972" starttime="20191220 13:48:40.317"></status>
+</kw>
+<msg timestamp="20191220 13:48:40.977" level="FAIL">Element 'xpath=//*[@id="atcRedesignId_overlay-atc-container"]//div[contains(text(),'1 item added to cart')]' not visible after 5 seconds.</msg>
+<status status="FAIL" endtime="20191220 13:48:40.977" starttime="20191220 13:48:35.134"></status>
+</kw>
+<status status="FAIL" endtime="20191220 13:48:40.978" starttime="20191220 13:48:35.133"></status>
+</kw>
+<status status="FAIL" endtime="20191220 13:48:40.978" starttime="20191220 13:48:35.132"></status>
+</kw>
+<tags>
+<tag>ebayTest</tag>
+<tag>Woolworths loyality test</tag>
+</tags>
+<status status="FAIL" endtime="20191220 13:48:40.979" critical="yes" starttime="20191220 13:47:50.148">Element 'xpath=//*[@id="atcRedesignId_overlay-atc-container"]//div[contains(text(),'1 item added to cart')]' not visible after 5 seconds.</status>
+</test>
+<status status="FAIL" endtime="20191220 13:48:40.994" starttime="20191220 13:47:49.430"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">ebayTest</stat>
+<stat fail="1" pass="0">Woolworths loyality test</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="ebayTest" pass="0">ebayTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
